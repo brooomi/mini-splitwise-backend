@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Splitwise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mini Splitwise</h1>
+
+        <!-- Gruppe auswählen -->
+        <div class="group-select">
+            <label for="group">Gruppe auswählen:</label>
+            <select id="group" onchange="loadExpenses(); loadBalance();">
+                <option value="1">Urlaub 2025</option>
+                <option value="2">WG</option>
+            </select>
+        </div>
+
+        <div class="main-content">
+            <!-- Ausgaben -->
+            <div class="expenses">
+                <h2>Ausgaben</h2>
+                <ul id="expense-list"></ul>
+
+                <h3>Neue Ausgabe hinzufügen</h3>
+                <input id="payer_name" placeholder="Dein Name">
+                <input id="description" placeholder="Beschreibung">
+                <input id="amount" type="number" placeholder="Betrag">
+                <button onclick="addExpense()">Hinzufügen</button>
+            </div>
+
+            <!-- Abrechnung -->
+            <div class="balance">
+                <h2>Abrechnung</h2>
+                <button onclick="loadBalance()">Berechnen</button>
+                <ul id="balance-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
