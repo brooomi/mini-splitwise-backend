@@ -37,7 +37,7 @@ groups = {
     }
 }
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"], include_in_schema=False)
 def read_root():
     return {"message": "Mini Splitwise Backend is running"}
 
