@@ -37,6 +37,10 @@ groups = {
     }
 }
 
+@app.get("/")
+def read_root():
+    return {"message": "Mini Splitwise Backend is running"}
+
 # GET: Ausgaben einer Gruppe
 @app.get("/groups/{group_id}/expenses")
 def get_expenses(group_id: int):
